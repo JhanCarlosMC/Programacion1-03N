@@ -6,7 +6,7 @@ public class Main {
   public static void main(String[] args) {
 
     ArrayList<Estudiante> listaEstudiantes = new ArrayList<>();
-    
+
     int n = Integer.parseInt(JOptionPane.showInputDialog("Digite la cantidad de estudiantes que quiere registrar: "));
 
     for (int i = 0; i < n; i++){
