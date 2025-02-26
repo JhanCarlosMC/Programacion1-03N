@@ -7,6 +7,7 @@ public class Guarderia {
   private String nit;
   private ArrayList<Estudiante> listEstudiantes;
 
+
   //Constructor
   public Guarderia(String nombre, String direccion, String nit) {
     this.nombre = nombre;
@@ -29,6 +30,7 @@ public class Guarderia {
         listEstudiantes.remove(i);
       }
     }
+
   }
 
   public void modificarEstudiante(String idEstudianteBuscar, Estudiante estudianteModificado){
