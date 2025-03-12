@@ -5,31 +5,43 @@ public class Guarderia {
   private String nombre;
   private String direccion;
   private String nit;
-  private ArrayList<Estudiante> listEstudiantes;
+  private Estudiante[] listEstudiantes;
 
 
   //Constructor
-  public Guarderia(String nombre, String direccion, String nit) {
+  public Guarderia(String nombre, String direccion, String nit, int cupoLimite) {
     this.nombre = nombre;
     this.direccion = direccion;
     this.nit = nit;
+    this.listEstudiantes = new Estudiante[cupoLimite];
   }
 
   public void mostarListaEstudiantesMayores(){
 
   }
 
-  public void crearEstudiante(Estudiante nuevoEstudiante){
-    listEstudiantes.add(nuevoEstudiante);
+  public boolean crearEstudiante(Estudiante nuevoEstudiante){
+
+    int posicionEncontrada = encontrarPosicionValida();
+    if(posicionEncontrada != -1){
+      listEstudiantes[posicionEncontrada] = nuevoEstudiante;
+      return true;
+    }else{
+      return false;
+    }
+  }
+
+  public int encontrarPosicionValida(){
+    for (int i = 0; i < listEstudiantes.length; i++){
+      if (listEstudiantes[i] == null){
+        return i;
+      }
+    }
+    return -1;
   }
 
   public void eliminarEstudiante(String idEstudianteEliminar){
 
-    for (int i = 0; i < listEstudiantes.size(); i++) {
-      if (listEstudiantes.get(i).getIdentificacion() == idEstudianteEliminar){
-        listEstudiantes.remove(i);
-      }
-    }
 
   }
 
@@ -66,11 +78,11 @@ public class Guarderia {
     this.nit = nit;
   }
 
-  public ArrayList<Estudiante> getListEstudiantes() {
+  public Estudiante[] getListEstudiantes() {
     return listEstudiantes;
   }
 
-  public void setListEstudiantes(ArrayList<Estudiante> listEstudiantes) {
+  public void setListEstudiantes(Estudiante[] listEstudiantes) {
     this.listEstudiantes = listEstudiantes;
   }
 }

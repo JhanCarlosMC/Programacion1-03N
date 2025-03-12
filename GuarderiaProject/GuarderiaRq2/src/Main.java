@@ -1,9 +1,21 @@
 import javax.swing.*;
+import java.util.Arrays;
 
 public class Main {
   public static void main(String[] args) {
 
-    pedirInformacionEstudiante();
+    Guarderia newGuarderia = new Guarderia("Guarderia UQ", "Calle 1", "123456789", 5);
+
+    Estudiante newEstudiante = new Estudiante("Juan",20,"123456789","Masculino","Alergias","<NAME>","99999999");
+
+    if(newGuarderia.crearEstudiante(newEstudiante)){
+      JOptionPane.showMessageDialog(null,"Estudiante creado exitosamente");
+    }else {
+      JOptionPane.showMessageDialog(null,"No se pudo crear el estudiante");
+    }
+
+//    System.out.println(Arrays.toString(newGuarderia.getListEstudiantes()));
+//    pedirInformacionEstudiante();
   }
 
   public static void pedirInformacionEstudiante(){
