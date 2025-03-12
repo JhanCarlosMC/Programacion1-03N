@@ -15,47 +15,33 @@ public class Empresa {
             return new Empleado[0];
         }
 
-        // Encontrar el salario más alto
-        double salarioMax = 0;
-        for (Empleado empleado : empleadosSinNulos) {
-            if (empleado.getSalario() > salarioMax) {
-                salarioMax = empleado.getSalario();
+        for (int i = 0; i < empleadosSinNulos.length; i++) {
+            for (int j = i; j < empleadosSinNulos.length; j++) {
+                if (empleadosSinNulos[i].getSalario() < empleadosSinNulos[j].getSalario()) {
+                    Empleado empleadoAux = empleadosSinNulos[i];
+                    empleadosSinNulos[i] = empleadosSinNulos[j];
+                    empleadosSinNulos[j] = empleadoAux;
+                }
             }
+
         }
 
-        // Contar cuántos empleados tienen ese salario
-        int count = 0;
-        for (Empleado empleado : empleadosSinNulos) {
-            if (empleado.getSalario() == salarioMax) {
-                count++;
-            }
-        }
-
-        // Crear el array resultante
-        Empleado[] empleadosSalarioAlto = new Empleado[count];
-        int index = 0;
-        for (Empleado empleado : empleadosSinNulos) {
-            if (empleado.getSalario() == salarioMax) {
-                empleadosSalarioAlto[index++] = empleado;
-            }
-        }
-
-        return empleadosSalarioAlto;
+        return empleadosSinNulos;
     }
 
     private Empleado[] encontrarListaEmpleadosSinNulos(Empleado[] empleados) {
         int count = 0;
-        for (Empleado empleado : empleados) {
-            if (empleado != null) {
+        for (int i = 0; i < listEmpleados.length; i++) {
+            if (listEmpleados[i] != null) {
                 count++;
             }
         }
 
         Empleado[] empleadosValidos = new Empleado[count];
         int index = 0;
-        for (Empleado empleado : empleados) {
-            if (empleado != null) {
-                empleadosValidos[index++] = empleado;
+        for (int i = 0; i < listEmpleados.length; i++) {
+            if (listEmpleados[i] != null) {
+                empleadosValidos[index++] = listEmpleados[i];
             }
         }
 
@@ -95,6 +81,7 @@ public class Empresa {
         int indice = encontrarPosicionValida();
 
         if (verificarIdEmpleado(newEmpleado.getId()) && indice != -1) {
+            newEmpleado.setSalario(asignarSalarioEmpleado(newEmpleado));
             listEmpleados[indice] = newEmpleado;
             return true;
         }
@@ -111,12 +98,33 @@ public class Empresa {
     }
 
     public boolean verificarIdEmpleado(String idEmpleado) {
-        for (Empleado empleado : listEmpleados) {
-            if (empleado != null && empleado.getId().equals(idEmpleado)) {
+        for (int i = 0; i < listEmpleados.length; i++) {
+            if (listEmpleados[i] != null && listEmpleados[i].getId().equals(idEmpleado)) {
                 return false;
             }
         }
         return true;
+    }
+
+    public double asignarSalarioEmpleado(Empleado empleado) {
+        double salarioCargo = 0;
+        switch (empleado.getCargo().toLowerCase()) {
+            case "gerente":
+                salarioCargo += 3000000;
+                break;
+            case "ingeniero":
+                salarioCargo += 4000000;
+                break;
+            case "desarrollador ":
+                salarioCargo += 2000000;
+                break;
+            default:
+                salarioCargo += 1000000;
+                break;
+        }
+
+
+        return salarioCargo;
     }
 
     public Empleado[] getListEmpleados() {
@@ -146,4 +154,5 @@ public class Empresa {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+
 }
