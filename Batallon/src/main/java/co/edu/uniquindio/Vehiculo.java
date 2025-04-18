@@ -5,34 +5,25 @@ import java.util.LinkedList;
 public abstract class Vehiculo {
     protected String id;
     protected String modelo;
-    protected int anioFabricacion;
+    protected int aniofabricacion;
     protected double kilometraje;
     protected int misionesCompletadas;
     protected EstadoOperativo estadoOperativo;
+
     protected LinkedList<Mision> listMisiones;
 
-    public Vehiculo(String id, String modelo, int anioFabricacion, double kilometraje, EstadoOperativo estadoOperativo) {
+    public Vehiculo(String id, String modelo, int aniofabricacion, double kilometraje, int misionesCompletadas, EstadoOperativo estadoOperativo) {
         this.id = id;
         this.modelo = modelo;
-        this.anioFabricacion = anioFabricacion;
+        this.aniofabricacion = aniofabricacion;
         this.kilometraje = kilometraje;
-        this.misionesCompletadas = 0;
+        this.misionesCompletadas = misionesCompletadas;
         this.estadoOperativo = estadoOperativo;
 
-        this.listMisiones = new LinkedList<>();
+        listMisiones = new LinkedList<>();
     }
-
 
     public abstract void desplazar();
-
-
-    public EstadoOperativo getEstadoOperativo() {
-        return estadoOperativo;
-    }
-
-    public void setEstadoOperativo(EstadoOperativo estadoOperativo) {
-        this.estadoOperativo = estadoOperativo;
-    }
 
     public String getId() {
         return id;
@@ -50,12 +41,12 @@ public abstract class Vehiculo {
         this.modelo = modelo;
     }
 
-    public int getAnioFabricacion() {
-        return anioFabricacion;
+    public int getAniofabricacion() {
+        return aniofabricacion;
     }
 
-    public void setAnioFabricacion(int anioFabricacion) {
-        this.anioFabricacion = anioFabricacion;
+    public void setAniofabricacion(int aniofabricacion) {
+        this.aniofabricacion = aniofabricacion;
     }
 
     public double getKilometraje() {
@@ -80,5 +71,13 @@ public abstract class Vehiculo {
 
     public void setListMisiones(LinkedList<Mision> listMisiones) {
         this.listMisiones = listMisiones;
+    }
+
+    public EstadoOperativo getEstadoOperativo() {
+        return estadoOperativo;
+    }
+
+    public void setEstadoOperativo(EstadoOperativo estadoOperativo) {
+        this.estadoOperativo = estadoOperativo;
     }
 }

@@ -1,25 +1,24 @@
 package co.edu.uniquindio;
 
-public class VehiculoApoyo extends Vehiculo {
-    private TipoFuncion tipoFuncion;
+public class VehiculoApoyo extends Vehiculo{
+    private TipoApoyo tipoApoyo;
 
-    public VehiculoApoyo(String id, String modelo, int anioFabricacion, double kilometraje, EstadoOperativo estadoOperativo, TipoFuncion tipoFuncion) {
-        super(id, modelo, anioFabricacion, kilometraje, estadoOperativo);
+    public VehiculoApoyo(String id, String modelo, int aniofabricacion, double kilometraje, int misionesCompletadas, TipoApoyo tipoApoyo, EstadoOperativo estadoOperativo) {
+        super(id, modelo, aniofabricacion, kilometraje, misionesCompletadas, estadoOperativo);
 
-        this.tipoFuncion = tipoFuncion;
+        this.tipoApoyo = tipoApoyo;
     }
 
     @Override
     public void desplazar() {
-
+        System.out.println("El vehiculo de apoyo se esta desplazando");
     }
 
-
-    public TipoFuncion getTipoFuncion() {
-        return tipoFuncion;
+    public TipoApoyo getTipoApoyo() {
+        return tipoApoyo;
     }
 
-    public void setTipoFuncion(TipoFuncion tipoFuncion) {
-        this.tipoFuncion = tipoFuncion;
+    public void setTipoApoyo(TipoApoyo tipoApoyo) {
+        this.tipoApoyo = tipoApoyo;
     }
 }

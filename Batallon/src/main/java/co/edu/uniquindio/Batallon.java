@@ -1,62 +1,251 @@
 package co.edu.uniquindio;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.LinkedList;
 
 public class Batallon {
-    private String nombre;
     private String id;
+    private String nombre;
 
     private LinkedList<VehiculoApoyo> listVehiculosApoyo;
     private LinkedList<VehiculoBlindado> listVehiculosBlindados;
-    private LinkedList<VehiculoTransporteTropa> listVehiculosTransporteTropa;
+    private LinkedList<VehiculoTransporteTropas> listVehiculosTransporteTropas;
 
-    private LinkedList<Mision> listMisiones;
+    private ArrayList<Mision> listMisiones;
 
-    public Batallon(String nombre, String id) {
-        this.nombre = nombre;
+    public Batallon(String id, String nombre) {
         this.id = id;
+        this.nombre = nombre;
 
         this.listVehiculosApoyo = new LinkedList<>();
         this.listVehiculosBlindados = new LinkedList<>();
-        this.listVehiculosTransporteTropa = new LinkedList<>();
-        this.listMisiones = new LinkedList<>();
+        this.listVehiculosTransporteTropas = new LinkedList<>();
+        this.listMisiones = new ArrayList<>();
     }
 
-    public boolean registrarMision(LocalDate fechaMision, String ubicacionMision,
-                                   LinkedList listPersonal, String idVehiculomision){
+    public boolean crearVehiculoBlindado(String id, String modelo, int aniofabricacion,
+                                         double kilometraje, int misionesCompletadas,
+                                         EstadoOperativo estadoOperativo, int nivelBlindaje){
         boolean flag = false;
 
-        //Convertir de int a string
-        String cantMisionesActuales = String.valueOf(listMisiones.size()+1);
+        for(VehiculoBlindado vehiculo : listVehiculosBlindados){
+            if(vehiculo.getId().equals(id)){
+                return flag;
+            }
+        }
 
-        Mision newMision = new Mision(cantMisionesActuales,fechaMision,ubicacionMision);
+        VehiculoBlindado newVehiculoBlindado =
+                new VehiculoBlindado(id,modelo, aniofabricacion,
+                        kilometraje, misionesCompletadas, nivelBlindaje, estadoOperativo);
+        listVehiculosBlindados.add(newVehiculoBlindado);
+        flag = true;
 
         return flag;
     }
 
-    public LinkedList<Vehiculo> obtenerVehiculosCantMisiones() {
-        LinkedList<Vehiculo> vehiculosMisionesCompletadas = new LinkedList<>();
 
+    public Vehiculo getVehiculoConMasMisiones() {
+        Vehiculo vehiculoConMasMisiones = null;
+        int maxMisiones = -1;
 
-        for (VehiculoApoyo vehiculo : listVehiculosApoyo) {
-            if (vehiculo.getMisionesCompletadas() > 50){
-                vehiculosMisionesCompletadas.add(vehiculo);
-            }
+// Buscar en vehículos de transporte de tropas for (VehiculoTransporteTropa v : listVehiculosTransporteTropa) {
+//        if (v.getMisionesCompletadas() > maxMisiones) {
+//            maxMisiones = v.getMisionesCompletadas();
+//            vehiculoConMasMisiones = v;
+//        }
+//
+//// Buscar en vehículos blindados for (VehiculoBlindado v : listVehiculosBlindados) {
+//        if (v.getMisionesCompletadas() > maxMisiones) {
+//            maxMisiones = v.getMisionesCompletadas();
+//            vehiculoConMasMisiones = v;
+//        }
+//
+//        // Buscar en vehículos de apoyo for (VehiculoApoyo v : listVehiculosApoyo) {
+//        if(v.getMisionesCompletadas()>maxMisiones)
+//            {
+//                maxMisiones = v.getMisionesCompletadas();
+//                vehiculoConMasMisiones = v;
+//            }
+
+                return vehiculoConMasMisiones;
         }
 
-        for(VehiculoBlindado vehiculo : listVehiculosBlindados){
-            if (vehiculo.getMisionesCompletadas() > 50){
-                vehiculosMisionesCompletadas.add(vehiculo);
-            }
-        }
 
-        for(VehiculoTransporteTropa vehiculo : listVehiculosTransporteTropa){
-            if (vehiculo.getMisionesCompletadas() > 50){
-                vehiculosMisionesCompletadas.add(vehiculo);
-            }
-        }
+public double kilometrajePromedioVehiculoCraga(LinkedList<VehiculoTransporteTropas> listVehiculosCarga) {
+    double sumakilometraje = 0;
+    int contador = 0;
+    for (VehiculoTransporteTropas vehiculo : listVehiculosTransporteTropas) {
 
-        return vehiculosMisionesCompletadas;
+        sumakilometraje += vehiculo.getKilometraje();
+
+        contador++;
+
     }
+
+    if (contador != 0) {
+        return sumakilometraje / contador;
+    }
+    return 0;
+}
+
+public double kilometrajePromedioVehiculoApoyo(LinkedList<VehiculoApoyo> listVehiculosApoyo) {
+
+    double sumakilometraje = 0;
+    int contador = 0;
+
+    for (VehiculoApoyo vehiculo : listVehiculosApoyo) {
+
+        sumakilometraje += vehiculo.getKilometraje();
+
+        contador++;
+
+    }
+
+    if (contador != 0) {
+        return sumakilometraje / contador;
+    }
+    return 0;
+}
+
+public double kilometrajePromedioVehiculoBlindado(LinkedList<VehiculoBlindado> listVehiculoBlindados) {
+
+    double sumakilometraje = 0;
+    int contador = 0;
+
+    for (VehiculoBlindado vehiculo : listVehiculoBlindados) {
+
+        sumakilometraje += vehiculo.getKilometraje();
+
+        contador++;
+    }
+
+    if (contador != 0) {
+        return sumakilometraje / contador;
+    }
+    return 0;
+}
+
+
+public boolean registrarMision(LocalDate fechaMision, String ubicacionMision,
+                               LinkedList listPersonal, String idVehiculoMision) {
+    boolean flag = false;
+    int idMisionNueva = listMisiones.size() + 1;
+
+    Mision newMision = new Mision(idMisionNueva, fechaMision, ubicacionMision);
+    newMision.setListPersonal(listPersonal);
+
+    for (VehiculoApoyo vehiculo : listVehiculosApoyo) {
+        if (vehiculo.getId().equals(idVehiculoMision)) {
+            newMision.setTheVehiculo(vehiculo);
+
+            LinkedList<Mision> listaMisionesAux = vehiculo.getListMisiones();
+            listaMisionesAux.add(newMision);
+            vehiculo.setListMisiones(listaMisionesAux);
+            flag = true;
+        }
+    }
+
+    for (VehiculoBlindado vehiculo : listVehiculosBlindados) {
+        if (vehiculo.getId().equals(idVehiculoMision)) {
+            newMision.setTheVehiculo(vehiculo);
+
+
+            LinkedList<Mision> listaMisionesAux = vehiculo.getListMisiones();
+
+            listaMisionesAux.add(newMision);
+            vehiculo.setListMisiones(listaMisionesAux);
+            flag = true;
+        }
+    }
+
+    for (VehiculoTransporteTropas vehiculo : listVehiculosTransporteTropas) {
+        if (vehiculo.getId().equals(idVehiculoMision)) {
+            newMision.setTheVehiculo(vehiculo);
+
+            LinkedList<Mision> listaMisionesAux = vehiculo.getListMisiones();
+
+            listaMisionesAux.add(newMision);
+            vehiculo.setListMisiones(listaMisionesAux);
+            flag = true;
+        }
+    }
+
+    listMisiones.add(newMision);
+
+    return flag;
+}
+
+public LinkedList<Vehiculo> obtenerVehiculosCantMisiones() {
+    LinkedList<Vehiculo> vehiculosMisiones = new LinkedList<>();
+
+
+    for (VehiculoApoyo vehiculo : listVehiculosApoyo) {
+        if (vehiculo.getMisionesCompletadas() > 50) {
+            vehiculosMisiones.add(vehiculo);
+        }
+    }
+
+    for (Vehiculo vehiculo : listVehiculosBlindados) {
+        if (vehiculo.getMisionesCompletadas() > 50) {
+            vehiculosMisiones.add(vehiculo);
+        }
+    }
+
+    for (Vehiculo vehiculo : listVehiculosTransporteTropas) {
+        if (vehiculo.getMisionesCompletadas() > 50) {
+            vehiculosMisiones.add(vehiculo);
+        }
+    }
+
+    return vehiculosMisiones;
+}
+
+public String getId() {
+    return id;
+}
+
+public void setId(String id) {
+    this.id = id;
+}
+
+public String getNombre() {
+    return nombre;
+}
+
+public void setNombre(String nombre) {
+    this.nombre = nombre;
+}
+
+public LinkedList<VehiculoApoyo> getListVehiculosApoyo() {
+    return listVehiculosApoyo;
+}
+
+public void setListVehiculosApoyo(LinkedList<VehiculoApoyo> listVehiculosApoyo) {
+    this.listVehiculosApoyo = listVehiculosApoyo;
+}
+
+public LinkedList<VehiculoBlindado> getListVehiculosBlindados() {
+    return listVehiculosBlindados;
+}
+
+public void setListVehiculosBlindados(LinkedList<VehiculoBlindado> listVehiculosBlindados) {
+    this.listVehiculosBlindados = listVehiculosBlindados;
+}
+
+public LinkedList<VehiculoTransporteTropas> getListVehiculosTransporteTropas() {
+    return listVehiculosTransporteTropas;
+}
+
+public void setListVehiculosTransporteTropas(LinkedList<VehiculoTransporteTropas> listVehiculosTransporteTropas) {
+    this.listVehiculosTransporteTropas = listVehiculosTransporteTropas;
+}
+
+public ArrayList<Mision> getListMisiones() {
+    return listMisiones;
+}
+
+public void setListMisiones(ArrayList<Mision> listMisiones) {
+    this.listMisiones = listMisiones;
+}
 }

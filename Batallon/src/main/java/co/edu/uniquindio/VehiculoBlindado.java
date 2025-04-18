@@ -3,15 +3,15 @@ package co.edu.uniquindio;
 public class VehiculoBlindado extends Vehiculo {
     private int nivelBlindaje;
 
-    public VehiculoBlindado(String id, String modelo, int anioFabricacion, double kilometraje, EstadoOperativo estadoOperativo, int nivelBlindaje) {
-        super(id, modelo, anioFabricacion, kilometraje, estadoOperativo);
+    public VehiculoBlindado(String id, String modelo, int aniofabricacion, double kilometraje, int misionesCompletadas, int nivelBlindaje, EstadoOperativo estadoOperativo) {
+        super(id, modelo, aniofabricacion, kilometraje, misionesCompletadas, estadoOperativo);
 
-    this.nivelBlindaje = nivelBlindaje;
+        this.nivelBlindaje = nivelBlindaje;
     }
 
     @Override
     public void desplazar() {
-        System.out.println("El vehiculo blindado se esta moviendo");
+
     }
 
     public int getNivelBlindaje() {

@@ -4,27 +4,26 @@ import java.time.LocalDate;
 import java.util.LinkedList;
 
 public class Mision {
-
-    private String id;
+    private int id;
     private LocalDate fecha;
     private String ubicacion;
-    private LinkedList<String> personal;
+    private LinkedList<String> listPersonal;
 
     private Vehiculo theVehiculo;
 
-    public Mision(String id, LocalDate fecha, String ubicacion) {
+    public Mision(int id, LocalDate fecha, String ubicacion) {
         this.id = id;
         this.fecha = fecha;
         this.ubicacion = ubicacion;
-        personal = new LinkedList<>();
 
+        this.listPersonal = new LinkedList<>();
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -44,12 +43,12 @@ public class Mision {
         this.ubicacion = ubicacion;
     }
 
-    public LinkedList<String> getPersonal() {
-        return personal;
+    public LinkedList<String> getListPersonal() {
+        return listPersonal;
     }
 
-    public void setPersonal(LinkedList<String> personal) {
-        this.personal = personal;
+    public void setListPersonal(LinkedList<String> listPersonal) {
+        this.listPersonal = listPersonal;
     }
 
     public Vehiculo getTheVehiculo() {

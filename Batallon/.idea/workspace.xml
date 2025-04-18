@@ -4,15 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="23c64855-d326-4efa-a6ba-3239c8f01e05" name="Changes" comment="">
+    <list default="true" id="5e99048e-f0fd-4ed4-b0b5-28613e5a10d0" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/Batallon.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/EstadoOperativo.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/Mision.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/TipoFuncion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/TipoApoyo.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/Vehiculo.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/VehiculoApoyo.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/VehiculoBlindado.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/VehiculoTransporteTropa.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/VehiculoTransporteTropas.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/co/edu/uniquindio/BatallonTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ConsultortioOdontologico/src/main/java/co/edu/uniquindio/herenciaanimales/Animal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ConsultortioOdontologico/src/main/java/co/edu/uniquindio/herenciaanimales/Gato.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ConsultortioOdontologico/src/main/java/co/edu/uniquindio/herenciaanimales/Pajaro.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ConsultortioOdontologico/src/main/java/co/edu/uniquindio/herenciaanimales/Perro.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ConsultortioOdontologico/src/main/java/co/edu/uniquindio/herenciafiguras/Cuadrado.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ConsultortioOdontologico/src/main/java/co/edu/uniquindio/herenciafiguras/FiguraGeometrica.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ConsultortioOdontologico/src/main/java/co/edu/uniquindio/herenciafiguras/Rectangulo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ConsultortioOdontologico/src/main/java/co/edu/uniquindio/herenciafiguras/Triangulo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ConsultortioOdontologico/src/main/java/co/edu/uniquindio/herenciafiguras/TrianguloEscaleno.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ConsultortioOdontologico/src/main/java/co/edu/uniquindio/herenciafiguras/TrianguloRectangulo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ConsultortioOdontologico/src/test/java/co/edu/uniquindio/AnimalTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ConsultortioOdontologico/src/test/java/co/edu/uniquindio/PajaroTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TestProgramacion1/src/main/java/org/example/Cargo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TestProgramacion1/src/main/java/org/example/Nota.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +39,7 @@
       <list>
         <option value="Class" />
         <option value="Enum" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -31,9 +47,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 1
+  &quot;associatedIndex&quot;: 3
 }</component>
-  <component name="ProjectId" id="2v95csD39Nig4Ya8hFzjTrnm4uD" />
+  <component name="ProjectId" id="2v9XTuJAKyKl8QbTAy0i0FwLB4h" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
@@ -41,21 +57,94 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JUnit.BatallonTest.crearVehiculoBlindadoTest.executor": "Run",
+    "JUnit.BatallonTest.executor": "Run",
+    "JUnit.BatallonTest.testUno.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/Workspaces/Estructura de Datos - 02D/ColasPilas",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="co.edu.uniquindio" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="co.edu.uniquindio" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.BatallonTest">
+    <configuration name="BatallonTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Batallon" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="co.edu.uniquindio.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="co.edu.uniquindio" />
+      <option name="MAIN_CLASS_NAME" value="co.edu.uniquindio.BatallonTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BatallonTest.crearVehiculoBlindadoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Batallon" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="co.edu.uniquindio.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="co.edu.uniquindio" />
+      <option name="MAIN_CLASS_NAME" value="co.edu.uniquindio.BatallonTest" />
+      <option name="METHOD_NAME" value="crearVehiculoBlindadoTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BatallonTest.testUno" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Batallon" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="co.edu.uniquindio.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="co.edu.uniquindio" />
+      <option name="MAIN_CLASS_NAME" value="co.edu.uniquindio.BatallonTest" />
+      <option name="METHOD_NAME" value="testUno" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.BatallonTest" />
+        <item itemvalue="JUnit.BatallonTest.crearVehiculoBlindadoTest" />
+        <item itemvalue="JUnit.BatallonTest.testUno" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -67,13 +156,16 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="23c64855-d326-4efa-a6ba-3239c8f01e05" name="Changes" comment="" />
-      <created>1743544538026</created>
+      <changelist id="5e99048e-f0fd-4ed4-b0b5-28613e5a10d0" name="Changes" comment="" />
+      <created>1743558276721</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1743544538026</updated>
-      <workItem from="1743544539315" duration="4259000" />
-      <workItem from="1743707540592" duration="5739000" />
+      <updated>1743558276721</updated>
+      <workItem from="1743558277822" duration="2609000" />
+      <workItem from="1743596443236" duration="45000" />
+      <workItem from="1743721937006" duration="5967000" />
+      <workItem from="1744160981845" duration="4987000" />
+      <workItem from="1744201426703" duration="26000" />
     </task>
     <servers />
   </component>
